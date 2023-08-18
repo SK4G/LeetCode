@@ -65,7 +65,7 @@ class Solution:
         trail_node = runner_node = head
         count = 0
 
-        while runner_node:
+        while n > 0 and runner_node:
             runner_node = runner_node.next
             count += 1
         

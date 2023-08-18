@@ -8,10 +8,15 @@ class LinkedList:
         self.head = None
 
     def is_empty(self):
-        
+        return self.head == None
 
     def append(self, data):
-        
+        new_node = Node(data)
+
+        if self.is_empty():
+            self.head = new_node
+        else:
+                
 
     def prepend(self, data):
 
