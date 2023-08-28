@@ -58,16 +58,13 @@
 # @lc code=start
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        maxSum = nums[0]
-        curSum = 0
+        cur_sum = max_sum = nums[0]
 
-        for n in nums:
-            if curSum < 0:
-                curSum = 0
-            curSum += n
-            maxSum = max(maxSum, curSum)
-
-        return maxSum
+        for num in nums[1:]:
+            cur_sum = max(num, cur_sum + num)
+            max_sum = max(max_sum, cur_sum)
+        
+        return max_sum
 
 # @lc code=end
 

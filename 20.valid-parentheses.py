@@ -59,12 +59,10 @@
 # @lc code=start
 class Solution:
     def isValid(self, s: str) -> bool:
+        close_pair = {"}": "{", ")": "(", "]": "["}
         stack = []
-        close_pair = {")": "(", "}": "{", "]": "["}
 
         for c in s:
-            # if closing parentheses is found and char at top 
-            # of stack is matching parentheses, pop char from stack.
             if c in close_pair:
                 if stack and stack[-1] == close_pair[c]:
                     stack.pop()
@@ -73,7 +71,7 @@ class Solution:
             else:
                 stack.append(c)
         
-        return True if not stack else False
+        return not stack 
         
 # @lc code=end
 

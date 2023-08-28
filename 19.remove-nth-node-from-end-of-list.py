@@ -62,15 +62,22 @@
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         tmp_head = ListNode(0, head)
-        trail_node = runner_node = head
-        count = 0
+        left = tmp_head
+        right = head
 
-        while n > 0 and runner_node:
-            runner_node = runner_node.next
-            count += 1
+        # advance right pointer to be n nodes away from left pointer
+        while n > 0:
+            right = right.next
+            n -= 1
+
+        # advance both pointer at same pace until right pointer is at the end
+        while right:
+            right = right.next
+            left = left.next
+        
+        # delete nth node
+        left.next = left.next.next
+        return tmp_head.next
         
         
-
-
 # @lc code=end
-
