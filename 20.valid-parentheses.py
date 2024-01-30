@@ -63,6 +63,8 @@ class Solution:
         stack = []
 
         for c in s:
+            # if closing parentheses is found and char at top 
+            # of stack is matching parentheses, pop char from stack.
             if c in close_pair:
                 if stack and stack[-1] == close_pair[c]:
                     stack.pop()
