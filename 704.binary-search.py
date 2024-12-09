@@ -54,7 +54,7 @@ class Solution:
         left = 0
         right = len(nums) - 1
         while(left <= right):
-            mid = (left + right) //2
+            mid = left + (right - left) //2
             if nums[mid] == target:
                 return mid
             if target > nums[mid]:
@@ -64,4 +64,3 @@ class Solution:
 
         return -1
 # @lc code=end
-
